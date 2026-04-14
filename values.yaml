@@ -1,0 +1,26 @@
+hello:
+  name: hello
+  replicas: 1
+  image:
+    repository: nginx
+    tag: latest
+
+ingress:
+  enabled: true
+  name: hello-ingress
+  host: hello.example.com
+  sslRedirect: "true"
+  tls:
+    enabled: true
+    secretName: hello-tls
+
+postgres:
+  enabled: true
+  name: postgres
+  image:
+    repository: pgvector/pgvector
+    tag: pg17
+  password: "123456"
+  database: testdb
+  storage: 500Mi
+  pvcName: postgres-pvc
