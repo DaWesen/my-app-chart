@@ -1,0 +1,6 @@
+hello:
+  name: hello
+  replicas: 3
+  image:
+    repository: nginx
+    tag: latest
